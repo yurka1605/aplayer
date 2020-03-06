@@ -43,9 +43,9 @@ $('.research .point').on('click', function() {
 
 
 // card show full
-$('.career__text > p > span').on('click', function() {
-    $(this).parent().next('p').toggleClass('full');
-    $(this).toggleClass('more');
+$('.show-all').on('click', function() {
+    $(this).parent().parent().toggleClass('full');
+    $(this).toggleClass('hide');
 });
 /** ======================== END:User actions ========================== **/
 
