@@ -79,14 +79,17 @@ nav {
 /* END:HEADER */
 
 .main {
-    margin-top: 80px;
+    
 }
 
 /* BANNER */
 .banner {
     height: auto;
+    padding-top: 80px;
     min-height: calc(100vh - 160px);
-    background-image: url();
+    background-image: url(../assets/banner-bg.jpg);
+    background-position: center;
+    background-size: cover;
 }
 .banner h1 {
     margin-bottom: 24px;
@@ -132,9 +135,8 @@ nav {
 }
 .card img {
     height: 80px;
-    width: 80px;
+    width: auto;
     min-height: 80px;
-    min-width: 80px;
     margin-bottom: 88px;
 }
 .card h3 {
@@ -358,8 +360,8 @@ section h2 {
 }
 .percent,
 .career img {
-    width: 580px;
-    height: 580px;
+    width: 100%;
+    height: auto;
     border-radius: 20px;
 }
 .career__text .hide {
@@ -373,7 +375,7 @@ section h2 {
     font-size: 14px;
 }
 .per-20 {
-    height: 20%;
+    height: calc(20% + 10px);
     border-radius: 8px;
     background-color: #F2F2F2;
     margin-bottom: 20px;
@@ -390,7 +392,7 @@ section h2 {
     border-radius: 8px;
     background-color: #E6AE5C;
     color: #fff;
-    height: 80%;
+    height: calc(80% - 10px);
     padding: 12px;
     font-size: 40px;
     font-weight: bold;
