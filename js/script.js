@@ -41,11 +41,22 @@ $('.research .point').on('click', function() {
     changeSlide('research', false, num);
 });
 
+// click skills control
+$('.arrows__item').on('click', function() {
+    changeSlide('skills', this);
+});
+
 
 // card show full
 $('.show-all').on('click', function() {
     $(this).parent().parent().toggleClass('full');
     $(this).toggleClass('hide');
+});
+
+// plus click
+$('.question__plus').on('click', function() {
+    $(this).parent().parent().toggleClass('full');
+    $(this).toggleClass('active');
 });
 /** ======================== END:User actions ========================== **/
 
@@ -55,10 +66,12 @@ $('.show-all').on('click', function() {
 function changeSlide(selector, current = false, currentNum = NaN) {
     var firtsSlide = $(`.${ selector }__slider_item:first-child`);
     var num = $(`.${ selector }__slider_item.active`).data('num');
-    var lastNum = $(`.${ selector }__slider_item.last`).data('num');
+    var lastNum = selector !== 'skills' ? $(`.${ selector }__slider_item.last`).data('num') : 4;
     $(`.${ selector }__slider_item`).each((i,el) => {
         $(el).removeClass('active');
-        $(`.${ selector } .point:nth-child(${ i + 1 })`).removeClass('active');
+        if (selector !== 'skills') {
+            $(`.${ selector } .point:nth-child(${ i + 1 })`).removeClass('active');
+        }
     });
     if (current != false) {
         if ($(current).hasClass('left')) {
@@ -69,9 +82,14 @@ function changeSlide(selector, current = false, currentNum = NaN) {
     } else {
         num = currentNum;
     }
-    var left = firtsSlide.width() * (num - 1) + 40 * (num - 1);
+    var marginLeft = selector !== 'skills' ? 40 : 30;
+    var left = firtsSlide.width() * (num - 1) + marginLeft * (num - 1);
     $(`.${ selector }__slider_item:nth-child(${ num })`).addClass('active');
     $(`.${ selector } .point:nth-child(${ num })`).addClass('active');
     $( firtsSlide ).animate({ marginLeft: `${ - left }px`}, 200);
+    if (selector === 'skills') {
+        num === 4 ? $('.arrows__item.right').addClass('hide') : $('.arrows__item.right').removeClass('hide');
+        num === 1 ? $('.arrows__item.left').addClass('hide') : $('.arrows__item.left').removeClass('hide');
+    }
 }
 /** ======================== END:Functions ========================== **/
