@@ -163,13 +163,14 @@ nav {
     position: relative;
     height: inherit;
 }
-.research img {
+.research .img {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 1390px;
     border-radius: 8px;
+    background-image: url(../assets/slider-bg.jpg);
 }
 .research__slider {
     position: absolute;
@@ -364,6 +365,12 @@ section h2 {
     width: 100%;
     height: auto;
     border-radius: 20px;
+}
+.percents .col-lg-6 .career__text {
+    display: none;
+} 
+.percents .percent-wrap:last-child .career__text {
+    display: none;
 }
 .career__text .full-text {
     display: none;
@@ -859,6 +866,13 @@ section h2 {
 .footer .social:hover svg path {
     fill: #E6AE5C;
 }
+.rait {
+    padding-bottom: 60px;
+}
+.rait .points {
+    margin: 0 auto;
+    padding: 30px 0;
+}
 /* END:footer */
 @media (max-width: 1200px) {
     .cards {
@@ -877,6 +891,153 @@ section h2 {
     }
     .right-menu .nav .col-md-12 {
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
+    }
+    .banner {
+        background-image: url(../assets/banner-bg-m.jpg);
+        background-position: bottom;
+        min-height: calc(100vh - 80px);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: #f8f8f8;
+    }
+    .header__btn {
+        display: none;
+    }
+    .header .row {
+        flex-direction: row-reverse;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .menu-btn {
+        margin: 0;
+    }
+    .research .img {
+        background-image: url(../assets/Image_4.jpg);
+        max-width: 100%;
+    }
+    .research__slider { 
+        right: 50%;
+        transform: translateX(50%);
+        max-width: 100%;
+    }
+    .skills__cards {
+    }
+    .skills__card {
+        margin-bottom: 30px;
+    }
+    .skills__slider_item {
+        margin-bottom: 30px;
+    }
+    .percents .percent-wrap:first-child {
+        order: 2;
+    }
+    .percents .col-lg-6 {
+        order: 1;
+        margin-bottom: 20px;
+    }
+    .percents .col-lg-6 .career__text {
+        display: block;
+    } 
+    .career .container .row:last-child {
+        display: none;
+    }
+    .percents .percent-wrap:last-child {
+        order: 3;
+        height: fit-content;
+    }
+    .percents .percent-wrap:last-child .career__text {
+        display: block;
+    }
+    .per-80 {
+        position: initial;
+        height: 320px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .per-20 {
+        height: 80px
+    }
+    .rait__info {
+        align-self: flex-start;
+    }
+    .rait button {
+        margin-top: 15px;
+    }
+    .rait__cards {
+        margin-top: 30px;
+    }
+    .usefull .col-lg-4 {
+        background-image: url(../assets/pencil-m.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: #f6f6f6;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    .usefull .col-lg-4 img {
+        opacity: 0;
+        width: 100%;
+    }
+    .adaptive__banner {
+        display: flex;
+        flex-direction: column-reverse;
+        height: auto;
+    }
+    .adaptive__banner img {
+        position: relative;
+        margin-bottom: 20px;
+        top: -30px;
+    }
+    .adaptive h2 {
+        font-size: 22px;
+    }
+    .adaptive .skills__cards {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) { 
+    .rait__card {
+        min-width: 100%;
+    }
+    .rait__card:nth-child(2) {
+        margin-left: 0;
+    }
+    .rait__card:nth-child(3) {
+        margin-left: 0;
+    }
+    .rait .points {
+        margin: 0 auto;
+        padding: 30px 0;
+    }
+    .work__col-2,
+    .work__col-1 {
+        display: none;
+    }
+    .work__col {
+        width: 100%;
+    }
+    .footer__links {
+        flex-direction: column;
+        padding: 30px 0;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .footer {
+        height: 200px;
+    }
+    .footer .contacts a:first-child {
+        position: absolute;
+        left: 0;
+    }
+    .rait__card {
+        display: none;
+    }
+    .rait__card.active {
+        display: flex;
     }
 }

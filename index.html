@@ -12,12 +12,12 @@
     <header class="header">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-md-5">
+                <div class="col-lg-5 col-10">
                     <div class="logo">
                         <img src="./assets/logo.svg" alt="logo">
                     </div>
                 </div>
-                <div class="col-lg-7 col-md-7 right-menu">
+                <div class="col-lg-7 col-2 right-menu">
                     <div class="nav row">
                         <nav class="col-lg-7 col-md-8">
                             <ul class="header__menu">
@@ -88,7 +88,7 @@
             </div>
         </section>
         <section class="research">
-            <img src="./assets/slider-bg.jpg" alt="bg">
+            <div class="img"></div>
             <div class="container">
                 <div class="research__slider">
                     <div data-num="1" class="research__slider_item active">
@@ -172,7 +172,7 @@
             <div class="container">
                 <h2>Из чего состоит успех в карьере</h2>
                 <div class="row percents">
-                    <div class="col-lg-3 percent-wrap">
+                    <div class="col-lg-3 col-6 percent-wrap">
                         <div class="per-20">20%</div>
                         <div class="career__text min">
                             <h3>Hard skills</h3>
@@ -184,12 +184,39 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
+                        <div class="career__text">
+                                <p>
+                                    Результаты исследования, проведенного в Гарвардском Университете и 
+                                    Стенфордском Исследовательском Институте говорят о том, что вклад твёрдых 
+                                    навыков в профессиональную успешность сотрудника составляет всего 15%, 
+                                    тогда как мягкие определяют
+                                    <span class="more">…</span>
+                                    <span class="full-text">
+                                        Результаты исследования, проведенного в Гарвардском Университете и 
+                                        Стенфордском Исследовательском Институте говорят о том, что вклад 
+                                        твёрдых навыков в профессиональную успешность сотрудника составляет 
+                                        всего 15%, тогда как мягкие определяют
+                                    </span>
+                                    <span class="show-all">
+                                        <span>Показать всё</span>
+                                        <span>Скрыть</span>
+                                    </span>
+                                </p>
+                        </div>
                         <div class="percent">
                             <img src="./assets/percent.jpg" alt="mountain">
                         </div>
                     </div>
-                    <div class="col-lg-3 percent-wrap">
+                    <div class="col-lg-3 col-6 percent-wrap">
                         <div class="per-80">80%</div>
+                        <div class="career__text min">
+                            <h3>Soft skills</h3>
+                            <p>
+                                Комплекс неспециализированных, надпрофессиональных навыков, 
+                                которые отвечают за успешное участие в рабочем процессе, 
+                                высокую производительность и являются сквозными, то есть не связаны с конкретной профессией.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -246,7 +273,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="rait__cards">
-                            <div class="rait__card">
+                            <div class="rait__card active">
                                 <img src="./assets/icon_8.png" alt="icon">
                                 <div class="rait__info">
                                     <h3>Мышление</h3>
@@ -266,6 +293,11 @@
                             <div class="rait__card">
                                 <img src="./assets/icon_10.png" alt="icon">
                             </div>
+                        </div>
+                        <div class="points">
+                            <span class="point active" data-num="1"></span>
+                            <span class="point" data-num="2"></span>
+                            <span class="point" data-num="3"></span>
                         </div>
                     </div>
                 </div>
@@ -342,7 +374,7 @@
             <div class="container">
                 <h2>Как развить нужные навыки?</h2>
                 <div class="row skills__cards">
-                    <div data-num="1" class="col-lg-4 skills__slider_item active">
+                    <div data-num="1" class="col-lg-4 col-md-6 col-12 skills__slider_item active">
                         <div class="img">
                             <img src="./assets/icon_11.png" alt="">
                         </div>
@@ -351,7 +383,7 @@
                             <p>Определите свои карьерные цели, возможности и уровень навыков.</p>
                         </div>
                     </div>
-                    <div data-num="2" class="col-lg-4 skills__slider_item">
+                    <div data-num="2" class="col-lg-4 col-md-6 col-12 skills__slider_item">
                         <div class="img">
                             <img src="./assets/icon_12.png" alt="">
                         </div>
@@ -360,7 +392,7 @@
                             <p>Система расчитает 10 ключевых индикаторов ваших компетенций.</p>
                         </div>
                     </div>
-                    <div data-num="3" class="col-lg-4 skills__slider_item">
+                    <div data-num="3" class="col-lg-4 col-md-6 col-12 skills__slider_item">
                         <div class="img">
                             <img src="./assets/icon_13.png" alt="">
                         </div>
@@ -369,7 +401,7 @@
                             <p>На основе ваших результатов  система сформирует прграмму кусов, которые вы сможете пройти на платформе или самостоятельно.</p>
                         </div>
                     </div>
-                    <div data-num="4" class="col-lg-4 skills__slider_item">
+                    <div data-num="4" class="col-lg-4 col-md-6 col-sm-12 skills__slider_item">
                         <div class="img">
                             <img src="./assets/icon_14.png" alt="">
                         </div>
@@ -394,25 +426,25 @@
                     <img height="100%" width="auto" src="./assets/Aplayer_symbol_b.svg" alt="A">
                 </div>
                 <div class="skills__cards row">
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="skills__card">
                             <img src="./assets/icon_17.svg" alt="15">
                             <p>Вы можете начать тренировки в любой день.</p>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="skills__card">
                             <img src="./assets/icon_18.svg" alt="16">
                             <p>Занимайтесь обучением на любом устройстве.</p>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="skills__card">
                             <img src="./assets/icon_19.svg" alt="17">
                             <p>Тренируйтесь столько времени, сколько потребуется.</p>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="skills__card">
                             <img src="./assets/icon_20.svg" alt="18">
                             <p>Программа адаптируется под ваш темп даёт результат.</p>
@@ -496,12 +528,12 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-12 footer__links">
+                <div class="col-lg-6 col-md-12 col-12 footer__links">
                     <a href="">Политика персональных данных</a>
                     <a href="">Пользовательское соглашение</a>
                     <a href="">Публичная оферта</a>
                 </div>
-                <div class="col-lg-6 col-md-6 contacts">
+                <div class="col-lg-6 col-md-12 contacts">
                     <a href="mailto:hello@aplayer.ai">hello@aplayer.ai</a>
                     <a href="#" class="social">
                         <svg height="20" width="20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">

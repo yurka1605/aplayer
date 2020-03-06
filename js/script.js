@@ -58,6 +58,16 @@ $('.question__plus').on('click', function() {
     $(this).parent().parent().toggleClass('full');
     $(this).toggleClass('active');
 });
+// point click 
+$('.rait .point').on('click', function() {
+    const num = $(this).data('num');
+    $(`.rait .point`).each((i,el) => {
+        $(el).removeClass('active');
+        $(`.rait__card:nth-child(${ i + 1 })`).removeClass('active');
+    });
+    $(this).addClass('active');
+    $(`.rait__card:nth-child(${ num })`).addClass('active');
+});
 /** ======================== END:User actions ========================== **/
 
 
