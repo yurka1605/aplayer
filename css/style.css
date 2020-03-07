@@ -405,6 +405,7 @@ section h2 {
 }
 .career__text.min p {
     font-size: 14px;
+    margin-bottom: 0;
 }
 .per-20 {
     height: calc(20% + 10px);
@@ -447,6 +448,7 @@ section h2 {
 .companies {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 340px;
     margin-bottom: 40px;
 }
@@ -454,6 +456,9 @@ section h2 {
     background-color: #000000;
     padding: 120px 0;
     color: #fff;
+}
+.rait .points {
+    display: none;
 }
 .rait h2 {
     color: #fff;
@@ -552,8 +557,8 @@ section h2 {
     left: 0;
     margin-right: 6px;
     display: inline-block;
-    width: 16px;
-    height: 16px;
+    width: 16px!important;
+    height: 16px!important;
     background-color: #E6AE5C;
     border-radius: 50%;
 }
@@ -1011,6 +1016,7 @@ section h2 {
         margin-left: 0;
     }
     .rait .points {
+        display: flex;
         margin: 0 auto;
         padding: 30px 0;
     }
@@ -1039,5 +1045,27 @@ section h2 {
     }
     .rait__card.active {
         display: flex;
+    }
+    .percent-wrap:first-child {
+        padding-right: 5px;
+    }
+    .percent-wrap:last-child {
+        padding-left: 5px;
+    }
+    .career__text.min p {
+        font-size: 14px;
+        line-height: 1.2;
+    }
+    .whowork__head {
+        display: block;
+    }
+    .whowork__tabs {
+        margin: 15px 0;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .whowork__tab {
+        margin-left: 0;
+        margin-right: 20px;
     }
 }
