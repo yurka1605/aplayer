@@ -54,12 +54,12 @@ $('.show-all').on('click', function() {
 });
 
 // plus click
-$('.question__plus').on('click', function() {
-    $(this).parent().parent().toggleClass('full');
-    $(this).toggleClass('active');
+$('.question').on('click', function() {
+    $(this).toggleClass('full');
+    $(this).children('.question__title').children('.question__plus').toggleClass('active');
 });
 // point click 
-$('.rait .point').on('click', function() {
+$('.rait .point, .rait__card').on('click', function() {
     const num = $(this).data('num');
     $(`.rait .point`).each((i,el) => {
         $(el).removeClass('active');
@@ -85,9 +85,9 @@ function changeSlide(selector, current = false, currentNum = NaN) {
     });
     if (current != false) {
         if ($(current).hasClass('left')) {
-            num = num === 1 ? num : num - 1;
+            num = num === 1 ? lastNum : num - 1;
         } else {
-            num = num === lastNum ? lastNum : num + 1;
+            num = num === lastNum ? 1 : num + 1;
         }
     } else {
         num = currentNum;
