@@ -60,29 +60,13 @@ $('.question').on('click', function() {
 });
 // point click 
 $('.rait .point, .rait__card').on('click', function() {
-    const num = $(this).data('num');
-    $(`.rait .point`).each((i,el) => {
-        $(el).removeClass('active');
-        $(`.rait__card:nth-child(${ i + 1 })`).removeClass('active');
-        $(`.rait__card:nth-child(${ i + 1 })`).removeClass('pre-active');
-        $(`.rait__card:nth-child(${ i + 1 })`).removeClass('last-active');
-    });
-    $(this).addClass('active');
-    $(`.rait__card:nth-child(${ num })`).addClass('active');
-    switch (num) {
-        case 2:
-            $(`.rait__card:nth-child(${ num + 1 })`).addClass('pre-active');
-            $(`.rait__card:nth-child(${ num - 1 })`).addClass('last-active');
-            break;
-        case 3:
-            $(`.rait__card:nth-child(${ num - 2 })`).addClass('pre-active');
-            $(`.rait__card:nth-child(${ num - 1 })`).addClass('last-active');
-            break;
-        default:
-            $(`.rait__card:nth-child(${ num + 1 })`).addClass('pre-active');
-            $(`.rait__card:nth-child(${ num + 2 })`).addClass('last-active');
-            break;
-    }
+    changeCart($(this).data('num'));
+});
+// mobile swipe card 
+$('.rait__cards').swipe({
+    swipeLeft: leftSwipe,
+    swipeRight: rightSwipe,
+    threshold: 10
 });
 /** ======================== END:User actions ========================== **/
 
@@ -122,6 +106,39 @@ function changeSlide(selector, current = false, currentNum = NaN) {
             $(el).removeClass('active');
         });
         $(`.research .img:nth-child(${ num })`).addClass('active');
+    }
+}
+// card swipe
+function leftSwipe() {
+    var num = $('.rait__card.active').data('num');
+    changeCart(num === 1 ? 3 : num - 1); 
+}
+function rightSwipe() {
+    var num = $('.rait__card.active').data('num');
+    changeCart(num === 3 ? 1 : num + 1);
+}
+function changeCart(num) {
+    $(`.rait .point`).each((i,el) => {
+        $(el).removeClass('active');
+        $(`.rait__card:nth-child(${ i + 1 })`).removeClass('active');
+        $(`.rait__card:nth-child(${ i + 1 })`).removeClass('pre-active');
+        $(`.rait__card:nth-child(${ i + 1 })`).removeClass('last-active');
+    });
+    $(`.rait .point:nth-child(${ num })`).addClass('active');
+    $(`.rait__card:nth-child(${ num })`).addClass('active');
+    switch (num) {
+        case 2:
+            $(`.rait__card:nth-child(${ num + 1 })`).addClass('pre-active');
+            $(`.rait__card:nth-child(${ num - 1 })`).addClass('last-active');
+            break;
+        case 3:
+            $(`.rait__card:nth-child(${ num - 2 })`).addClass('pre-active');
+            $(`.rait__card:nth-child(${ num - 1 })`).addClass('last-active');
+            break;
+        default:
+            $(`.rait__card:nth-child(${ num + 1 })`).addClass('pre-active');
+            $(`.rait__card:nth-child(${ num + 2 })`).addClass('last-active');
+            break;
     }
 }
 /** ======================== END:Functions ========================== **/

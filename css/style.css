@@ -21,11 +21,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'TTNorms-Medium', sans-serif;
     font-weight: 500;
 }
-button {
-    outline: none!important;
-    background-color: transparent;
-    border: 0;
-}
 ul {
     list-style-type: none;
 }
@@ -69,8 +64,10 @@ nav {
 .header__menu_item a:hover {
     color: #CC9A52;
 }
-.card__info button,
+.card__info a,
 .header__btn {
+    display: inline-block;
+    text-decoration: none!important;
     color: #CC9A52;
     font-weight: 500;
     line-height: 16px;
@@ -78,8 +75,16 @@ nav {
     padding: 10px 12.5px;
     border: 1px solid #D9D9D9;
     border-radius: 8px;
+    text-decoration: none;
 }
-.card__info button:hover,
+.card__info a {
+    color: #fff;
+    background-color: #E6AE5C;
+}
+.card__info a:hover {
+    background-color: #fff;
+    color: #CC9A52;
+}
 .header__btn:hover {
     background-color: #CC9A52;
     color: #fff;
@@ -117,16 +122,18 @@ nav {
 .banner p {
     color: #333333;
 }
-.banner button {
+.banner a {
+    display: inline-block;
     margin-top: 32px;
     padding: 12px 16px;
     border-radius: 8px;
     background-color: #E6AE5C;
     color: #fff;
     border: 1px solid #E6AE5C;
+    text-decoration: none;
 }
-.banner button:hover {
-    background-color: #fff;
+.banner a:hover {
+    background-color: transparent;
     color: #E6AE5C;
 }
 /* END:BANNER */
@@ -152,11 +159,13 @@ nav {
     border: 1px solid #D9D9D9;
     border-radius: 20px;
 }
+.card:hover {
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1);
+}
 .card img {
     height: 80px;
     width: auto;
     min-height: 80px;
-    /* margin-bottom: 88px; */
 }
 .card h3 {
     font-size: 24px;
@@ -365,14 +374,13 @@ nav {
     border: 1px solid #D9D9D9;
     border-radius: 20px;
     background-color: #FFFFFF;
-    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1);
     overflow: hidden;
 }
 .plus .card {
     overflow: hidden;
 }
-.plus .card button,
-.mode .card button {
+.plus .card a,
+.mode .card a {
     margin-top: 16px;
     opacity: 0;
 }
@@ -386,8 +394,8 @@ nav {
 .mode .card:hover img {
     margin-bottom: 5px;
 }
-.plus .card:hover button,
-.mode .card:hover button {
+.plus .card:hover a,
+.mode .card:hover a {
     opacity: 1;
 }
 /* END:mode */
@@ -509,7 +517,9 @@ section h2 {
     color: #fff;
     font-size: 32px;
 }
-.rait button {
+.rait a {
+    display: inline-block;
+    text-decoration: none;
     margin-top: 32px;
     padding: 12px 16px;
     border-radius: 8px;
@@ -517,7 +527,7 @@ section h2 {
     color: #fff;
     border: 1px solid #E6AE5C;
 }
-.rait button:hover {
+.rait a:hover {
     background-color: transparent;
     color: #E6AE5C;
 }
@@ -793,7 +803,9 @@ section h2 {
     color: #fff;
     max-width: 550px;
 }
-.adaptive button {
+.adaptive a {
+    display: inline-block;
+    text-decoration: none;
     margin-top: 32px;
     padding: 12px 16px;
     border-radius: 8px;
@@ -801,7 +813,7 @@ section h2 {
     color: #fff;
     border: 1px solid #E6AE5C;
 }
-.adaptive button:hover {
+.adaptive a:hover {
     background-color: transparent;
     color: #E6AE5C;
 }
@@ -950,6 +962,9 @@ section h2 {
         margin-right: 30px;
         height: 400px;
     }
+    .plus .card {
+        height: 280px;
+    }
     .plus .cards,
     .mode .cards {
         overflow: auto;
@@ -967,7 +982,7 @@ section h2 {
         display: none;
     }
     .plus .card img {
-        margin-bottom: 170px;
+        margin-bottom: 50px;
     }
 }
 
@@ -1049,7 +1064,7 @@ section h2 {
     .rait__info {
         align-self: flex-start;
     }
-    .rait button {
+    .rait a {
         margin-top: 15px;
     }
     .rait__cards {
@@ -1093,7 +1108,7 @@ section h2 {
         font-size: 32px;   
         line-height: 40px;
     }
-    .banner button {
+    .banner a {
         margin-top: 5px;
     }
     .skills__card p {
@@ -1165,8 +1180,15 @@ section h2 {
     }
 }
 @media (max-width: 480px) {
+    .skills {
+        padding: 50px 0 0 0;
+    }
+    .mode,
+    .career {
+        margin-bottom: 50px;
+    }
     .usefull {
-        padding-top: 350px;
+        padding: 300px 0 50px 0;
     }
     .research__slider {
         bottom: -40%;
@@ -1188,6 +1210,9 @@ section h2 {
     }
     .rait {
         padding-top: 50px;
+    }
+    .plus {
+        padding: 50px 0;
     }
     .adaptive__banner {
         padding: 20px;
