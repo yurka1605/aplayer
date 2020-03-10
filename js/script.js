@@ -64,9 +64,25 @@ $('.rait .point, .rait__card').on('click', function() {
     $(`.rait .point`).each((i,el) => {
         $(el).removeClass('active');
         $(`.rait__card:nth-child(${ i + 1 })`).removeClass('active');
+        $(`.rait__card:nth-child(${ i + 1 })`).removeClass('pre-active');
+        $(`.rait__card:nth-child(${ i + 1 })`).removeClass('last-active');
     });
     $(this).addClass('active');
     $(`.rait__card:nth-child(${ num })`).addClass('active');
+    switch (num) {
+        case 2:
+            $(`.rait__card:nth-child(${ num + 1 })`).addClass('pre-active');
+            $(`.rait__card:nth-child(${ num - 1 })`).addClass('last-active');
+            break;
+        case 3:
+            $(`.rait__card:nth-child(${ num - 2 })`).addClass('pre-active');
+            $(`.rait__card:nth-child(${ num - 1 })`).addClass('last-active');
+            break;
+        default:
+            $(`.rait__card:nth-child(${ num + 1 })`).addClass('pre-active');
+            $(`.rait__card:nth-child(${ num + 2 })`).addClass('last-active');
+            break;
+    }
 });
 /** ======================== END:User actions ========================== **/
 
@@ -100,6 +116,12 @@ function changeSlide(selector, current = false, currentNum = NaN) {
     if (selector === 'skills') {
         num === 4 ? $('.arrows__item.right').addClass('hide') : $('.arrows__item.right').removeClass('hide');
         num === 1 ? $('.arrows__item.left').addClass('hide') : $('.arrows__item.left').removeClass('hide');
+    }
+    if (selector === 'research') {
+        $(`.research .img`).each((i,el) => {
+            $(el).removeClass('active');
+        });
+        $(`.research .img:nth-child(${ num })`).addClass('active');
     }
 }
 /** ======================== END:Functions ========================== **/

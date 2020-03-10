@@ -44,6 +44,7 @@ body {
     top: 0;
     left: 0;
     padding: 25px 0;
+    background-color: #f8f8f8;
 }
 .logo img {
     height: 30px;
@@ -104,6 +105,7 @@ nav {
     background-image: url(../assets/banner-bg.jpg);
     background-position: center;
     background-size: cover;
+    background-color: #f8f8f8;
 }
 .banner h1 {
     margin-bottom: 24px;
@@ -187,6 +189,18 @@ nav {
     width: 1390px;
     border-radius: 8px;
     background-image: url(../assets/slider-bg.jpg);
+    background-position: center;
+    opacity: 0;
+}
+.research .img:nth-child(2) {
+    background-image: url(../assets/slider-bg-2.jpg);
+}
+.research .img:nth-child(3) {
+    background-image: url(../assets/slider-bg-3.png);
+}
+.research .img.active{
+    z-index: 3;
+    opacity: 1;
 }
 .research__slider {
     position: absolute;
@@ -200,6 +214,7 @@ nav {
     border-radius: 20px;
     background-color: #FFFFFF;
     overflow: hidden;
+    z-index: 4;
 }
 .research__slider b {
     color: #E6AE5C;
@@ -476,6 +491,7 @@ section h2 {
 /* rait */
 .companies {
     display: flex;
+    max-width: 100%;
     justify-content: space-between;
     align-items: center;
     width: 340px;
@@ -506,10 +522,13 @@ section h2 {
     color: #E6AE5C;
 }
 .rait__cards {
-    display: flex;
+    position: relative;
+    height: 480px;
+    width: 380px;
+    max-width: 100%;
 }
 .rait__card {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -518,21 +537,26 @@ section h2 {
     width: 380px;
     max-width: 100%;
     border-radius: 20px;
-    background-color: #FFFFFF;
     padding: 20px;
-    z-index: 3;
     color: #000000;
-    /* cursor: pointer; */
+    cursor: pointer;
+    transition: margin-left 0.4s linear,
+            background-color 0.6s linear;
 }
-.rait__card:nth-child(2) {
+.rait__card.active {
+    background-color: #ffffff;
+    z-index: 3;
+    margin-left: 0;
+}
+.rait__card.pre-active {
     background-color: #666666;
     z-index: 2;
-    margin-left: -35%;
+    margin-left: 35%;
 }
-.rait__card:last-child {
+.rait__card.last-active {
     background-color: #333333;
     z-index: 1;
-    margin-left: -35%;
+    margin-left: 70%;
 }
 .rait__card img {
     height: auto;
@@ -545,6 +569,14 @@ section h2 {
 }
 .rait-list {
     margin-bottom: 0;
+    align-self: flex-start;
+}
+.rait__card .rait__info {
+    opacity: 0;
+    width: 100%;
+}
+.rait__card.active .rait__info {
+    opacity: 1;
 }
 .rait-list li {
     padding: 5px 0;
@@ -922,6 +954,21 @@ section h2 {
     .mode .cards {
         overflow: auto;
     }
+    .rait__card.pre-active {
+        margin-left: 15%;
+    }
+    .rait__card.last-active {
+        margin-left: 30%;
+    }
+    .research .img {
+        max-width: 100%;
+    }
+    .header__menu {
+        display: none;
+    }
+    .plus .card img {
+        margin-bottom: 170px;
+    }
 }
 
 @media (max-width: 992px) {
@@ -938,7 +985,6 @@ section h2 {
         min-height: calc(100vh - 80px);
         background-size: contain;
         background-repeat: no-repeat;
-        background-color: #f8f8f8;
     }
     .header__btn {
         display: none;
@@ -951,12 +997,13 @@ section h2 {
         align-items: center;
         justify-content: center;
     }
+    .logo img {
+        margin-left: -16.666667%;
+    }
     .menu-btn {
         margin: 0;
     }
     .research .img {
-        background-image: url(../assets/Image_4.jpg);
-        background-position: center;
         max-width: 100%;
     }
     .research__slider {
@@ -1040,7 +1087,7 @@ section h2 {
 
 @media (max-width: 768px) {
     .banner {
-        padding-top: 50px;
+        padding-top: 20px;
     }
     .banner h1 {      
         font-size: 32px;   
@@ -1056,11 +1103,12 @@ section h2 {
     .rait__card {
         min-width: 100%;
     }
-    .rait__card:nth-child(2) {
-        margin-left: 0;
+    .rait__card {
+        margin-left: 0!important;
+        background-color: #ffffff!important;
     }
-    .rait__card:nth-child(3) {
-        margin-left: 0;
+    .rait__card.last-active {
+        background-color: #333333;
     }
     .rait .points {
         display: flex;
@@ -1100,7 +1148,7 @@ section h2 {
         padding-left: 5px;
     }
     .career__text.min p {
-        font-size: 14px;
+        font-size: 12px;
         line-height: 1.2;
     }
     .whowork__head {
@@ -1128,7 +1176,27 @@ section h2 {
         border-radius: 0;
     }
     .adaptive__banner img {
-        width: 100%;
+        width: calc(100% + 40px);
+        margin-top: 20px;
+        margin-bottom: 0;
+        margin-left: -20px;
         height: auto;
+    }
+    .adaptive,
+    .questions {
+        padding-bottom: 50px;
+    }
+    .rait {
+        padding-top: 50px;
+    }
+    .adaptive__banner {
+        padding: 20px;
+    }
+    .rait h2,
+    .section h2 {
+        font-size: 26px;
+    }
+    .banner p {
+        font-size: 14px;
     }
 }
